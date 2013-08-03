@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>OAuth2</title>
+</head>
+<body>
+<center>
+    <h2>Resource Owner Form</h2>
+	<form action="/oauth2/token">
+<table>
+	 <tr><td>username<td><td><input type="text" name="username" ><td></tr>
+	 <tr><td>password<td><td><input type="text" name="password"><td></tr>
+	 <tr><td>grant_type<td><td><input type="text" name="grant_type" value="password" disabled="disabled"><td></tr>
+	 <tr><td><td><td><input type="hidden" name="grant_type" value="password" ><td></tr>
+	 <tr><td>client_id<td><td><input type="text" name="client_id" ><td></tr>
+	 <tr><td>client_secret<td><td><input type="text" name="client_secret"><td></tr>
+	 <tr><td><td><td><input type="submit" value="Get Access token"><td></tr>
+	 </table>			
+</form>
+
+</center>
+<br/>
+<br/>
+		<table>
+			<tr>
+				<td>
+				<h2>Authorization Request Format </h2>
+					<table class="dataTable"  border="1" bgcolor="#C0C0C0">
+						<tbody>
+							<tr>
+								<td><code>response_type</code></td>
+								<td>Required. Must be set to <code>code</code></td>
+							</tr>
+							<tr>
+								<td><code>client_id</code></td>
+								<td>Required. The client identifier as assigned by the
+									authorization server, when the client was registered.</td>
+							</tr>
+							<tr>
+								<td><code>redirect_uri</code></td>
+								<td>Optional. The redirect URI registered by the client.</td>
+							</tr>
+							<tr>
+								<td><code>scope</code></td>
+								<td>Optional. The possible scope of the request.</td>
+							</tr>
+							<tr>
+								<td><code>state</code></td>
+								<td>Optional (recommended). Any client state that needs to
+									be passed on to the client request URI.</td>
+							</tr>
+						</tbody>
+					</table>
+					<h2>Authorization Response Foramt </h2>
+					<table class="dataTable"  border="1" bgcolor="#C0C0C0">
+						<tbody>
+							<tr>
+								<td><code>code</code></td>
+								<td>Required. The authorization code.</code></td>
+							</tr>
+							<tr>
+								<td><code>state</code></td>
+								<td>Required, if present in request. The same value as sent by the client in the <code>state </code>parameter, if any.</td>
+							</tr>						
+						</tbody>
+					</table>
+				<td>				
+			</tr>
+		</table>
+
+
+</body>
+</html>

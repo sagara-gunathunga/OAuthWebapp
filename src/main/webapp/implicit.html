@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>OAuth2</title>
+</head>
+<body>
+<center>
+    <h2>Implicit Request Form</h2>
+	<form action="/oauth2/authorize">
+	 <table>
+	 <tr><td>response_type<td><td><input type="text" name="response_type" value="token" ><td></tr>
+	 <tr><td>client_id<td><td><input type="text" name="client_id"><td></tr>
+	 <tr><td>scope<td><td><input type="text" name="scope"><td></tr>
+	 <tr><td>state<td><td><input type="text" name="state"><td></tr>
+	 <tr><td>redirect_uri<td><td><input type="text" name="redirect_uri" value="http://localhost:8080/oauth2/oauth" disabled="disabled"><td></tr>
+	 <tr><td><td><td><input type="submit" value="Get Authorization token"><td></tr>
+	 </table>	
+	</form>
+
+		<table>
+			<tr>
+				<td>
+				<h2>Authorization Request </h2>
+					<table class="dataTable"  border="1" bgcolor="#C0C0C0">
+						<tbody>
+							<tr>
+								<td><code>response_type</code></td>
+								<td>Required. Must be set to <code>code</code></td>
+							</tr>
+							<tr>
+								<td><code>client_id</code></td>
+								<td>Required. The client identifier as assigned by the
+									authorization server, when the client was registered.</td>
+							</tr>
+							<tr>
+								<td><code>redirect_uri</code></td>
+								<td>Optional. The redirect URI registered by the client.</td>
+							</tr>
+							<tr>
+								<td><code>scope</code></td>
+								<td>Optional. The possible scope of the request.</td>
+							</tr>
+							<tr>
+								<td><code>state</code></td>
+								<td>Optional (recommended). Any client state that needs to
+									be passed on to the client request URI.</td>
+							</tr>
+						</tbody>
+					</table>
+				<td>
+				<td>
+				<h2>Authorization Response </h2>
+					<table class="dataTable"  border="1" bgcolor="#C0C0C0">
+						<tbody>
+							<tr>
+								<td><code>code</code></td>
+								<td>Required. The authorization code.</code></td>
+							</tr>
+							<tr>
+								<td><code>state</code></td>
+								<td>Required, if present in request. The same value as sent by the client in the <code>state </code>parameter, if any.</td>
+							</tr>						
+						</tbody>
+					</table>
+				<td>
+			</tr>
+		</table>
+
+
+	</center>
+</body>
+</html>
